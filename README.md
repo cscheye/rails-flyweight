@@ -1,3 +1,9 @@
+#Rails Lite!
+##A project completed at AppAcademy
+
+From the original docs:
+
+
 # Using the specs
 Some specs have been written to guide you towards the lite :) There are rspec
 specs in the `spec` directory and ruby code for you to test with in the `test`
@@ -15,5 +21,5 @@ generally follow the progression of the project.
 
 Run `rake` to run all the spec files.
 
-If you're feeling extra fancy you can run [guard](https://github.com/guard/guard)! 
+If you're feeling extra fancy you can run [guard](https://github.com/guard/guard)!
 just type `guard`
