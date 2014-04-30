@@ -7,11 +7,9 @@ class Params
   # 2. post body
   # 3. route params
   def initialize(req, route_params = {})
-    debugger
     @params = parse_www_encoded_form(req.query_string)
     @params = @params.merge(parse_www_encoded_form(req.body))
-    debugger
-    a = 1
+    @params = @params.merge(route_params)
   end
 
   def [](key)
@@ -28,7 +26,7 @@ class Params
   end
 
   def to_s
-    @params.to_s
+    @params
   end
 
   class AttributeNotFoundError < ArgumentError; end;
@@ -63,9 +61,9 @@ class Params
   def make_hash(keys, val)
     current_key = keys.pop
     if keys.empty?
-      { current_key => val }
+      { current_key.to_sym => val }
     else
-      { current_key => make_hash(keys, val) }
+      { current_key.to_sym => make_hash(keys, val) }
     end
   end
 end
